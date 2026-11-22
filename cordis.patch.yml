@@ -1,0 +1,5 @@
+# dsh-keep-top bundle patch：把 host 半区插进 profile 的插件 roster。
+# 浏览器半区走 package.json 的 dsh.client 清单。
+- insert:
+    - id: dsh-keep-top
+      name: 'dsh-keep-top'

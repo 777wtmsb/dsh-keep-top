@@ -1,0 +1,53 @@
+{
+  "name": "dsh-keep-top",
+  "version": "0.1.1",
+  "description": "输出时跟到本条回答顶部就停住，保留官方标准档的分组合并。Keep the answer's first line in view while it streams.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "web",
+    "ui",
+    "scroll",
+    "chat",
+    "auto-scroll",
+    "viewport"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/777wtmsb/dsh-keep-top.git"
+  },
+  "homepage": "https://github.com/777wtmsb/dsh-keep-top#readme",
+  "bugs": {
+    "url": "https://github.com/777wtmsb/dsh-keep-top/issues"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.1 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  }
+}
