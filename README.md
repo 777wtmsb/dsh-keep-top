@@ -100,7 +100,7 @@ To change the defaults themselves, edit `DEFAULTS` in `lib/client.js`. A stale v
 - Depends on DSH's `data-chat-flow-kind` / `data-conversation-scroll` attributes; a DOM contract change upstream may need a matching update here.
 - If a turn's prose gets split by tool calls into several `assistant-step` rows (the DSH desktop client does not do this — interim lines and reasoning live inside `assistant-step[think]`), only the first row is anchored.
 - On very large windows a short answer may fit without ever reaching the stop condition. Expected.
-- Tiny single-frame nudge at the exact moment a turn ends is a known, accepted trade-off; the fix was kept simple on purpose (better to miss one takeover than to freeze once).
+- One frame can slip while text is streaming: the position is corrected *after* DSH writes it (next animation frame), not intercepted before. A plugin that hijacks the container's `scrollTop` setter can be pixel-perfect; this one trades that single frame for safety on purpose — a bad re-entrancy guard behind such a setter means a viewport that won't move at all. The end-of-turn nudge is already handled by re-measuring the row every frame.
 
 ---
 
