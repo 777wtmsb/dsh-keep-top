@@ -4,6 +4,8 @@
 
 <img src="assets/icon.png" width="96" alt="dsh-keep-top icon">
 
+<img src="assets/screenshot-1.png" alt="左：视口一直被拽到底部。右：停在回答的第一行。">
+
 一个只做**一件事**的 DeepSeek Harness（DSH）网页客户端小插件：回答流式输出时，视口跟着它走，但只跟到**这轮回答的第一行贴住屏幕顶部**为止，然后就停在那儿。
 
 这样你想往回翻一点、重读刚过去的那段时，就不用跟还在往下拽你的输出较劲。

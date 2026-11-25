@@ -4,6 +4,8 @@
 
 <img src="assets/icon.png" width="96" alt="dsh-keep-top icon">
 
+<img src="assets/screenshot-1.png" alt="Before: the viewport keeps chasing the bottom. After: it stops at the answer's first line.">
+
 A tiny DeepSeek Harness (DSH) web-client plugin that does **one** thing: while an answer streams in, the viewport follows it only until the **first line of that answer reaches the top of the screen**, then it stops there.
 
 So when you want to scroll back a little and re-read the paragraph that just went by, you don't have to fight an output that keeps dragging you to the bottom.
