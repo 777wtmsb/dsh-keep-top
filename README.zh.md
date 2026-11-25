@@ -101,7 +101,7 @@ __dshKeepTop.dispose()                 // 移除监听
 ## 已知限制
 
 - 只支持桌面网页客户端（`dsh.client.platform` 是 `web`）。
-- 依赖 DSH 的 `data-chat-flow-kind` / `data-conversation-scroll` 属性；上游一旦改了这个 DOM 契约，这里可能得跟着改。
+- 依赖 DSH 的 `data-chat-flow-kind` / `data-conversation-scroll` 属性；上游一旦改了这个 DOM 契约，这里可能得跟着改。真发生时插件不会崩，只是不再接管——连续 5 秒认不出正文行会在 Console 打一条警告，`__dshKeepTop.state().lastProseAgo` 会一直保持 `null`。
 - 如果一轮的正文被工具调用切成好几段 `assistant-step`（DSH 桌面端不会这样——过渡语和思考都在 `assistant-step[think]` 里），只有第一段会被锚定。
 - 窗口特别大时，短回答可能还没到停止条件就写完了。这是预期行为。
 - 流式过程中可能漏一帧：位置是在 DSH 写完**之后**（下一个动画帧）才修正的，而不是在写入前拦截。劫持容器 `scrollTop` setter 的插件能做到像素级无缝；这个插件故意用那一帧换安全——这种 setter 后面的重入保护一旦写错，就是视口完全不动。一轮结束时的抽动已经通过每帧重测解决了。
@@ -119,6 +119,10 @@ dsh plugin --profile desktop remove dsh-keep-top
 ---
 
 ## 变更记录
+
+### 0.1.2
+
+- 自检：内容一直在长、却连续 5 秒认不出正文行时，Console 打一条警告（这是 DSH 改 DOM 后“静默失效”的样子）。`state()` 新增 `lastProseAgo` 与 `domWarned`。
 
 ### 0.1.1
 

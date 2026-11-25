@@ -1,6 +1,6 @@
 {
   "name": "dsh-keep-top",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "输出时跟到本条回答顶部就停住，保留官方标准档的分组合并。Keep the answer's first line in view while it streams.",
   "type": "module",
   "main": "./lib/index.js",
