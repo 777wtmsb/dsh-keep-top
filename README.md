@@ -1,3 +1,5 @@
+**English** | [中文](README.zh.md)
+
 # dsh-keep-top
 
 <img src="assets/icon.png" width="96" alt="dsh-keep-top icon">
@@ -129,19 +131,9 @@ The plugin does not modify any official config, so nothing else needs restoring.
 
 ---
 
-## 中文速览
+## 中文
 
-一个只做一件事的小插件：**输出时视口跟到「本条回答的第一行」贴住顶部就停住，不再继续往底部追。** 想往上翻看刚过去的那段，不用跟还在往下跑的输出较劲。
-
-官方展示档保持 `standard`（过程行仍是「思考 · 已完成 N 步」的一行合并），只在恰当时机接管滚动写权；任何用户输入（滚轮、触摸、点击、翻页键）立即交还，本轮不再抢。
-
-装：
-
-```bash
-dsh plugin --profile desktop add github:777wtmsb/dsh-keep-top
-```
-
-然后重启 DSH。设置项见上面的表格，`__dshKeepTop.set({ topGap: 24 })` 可以改。
+中文说明见 [README.zh.md](README.zh.md)。
 
 ## License
 
